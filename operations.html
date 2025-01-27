@@ -23,19 +23,25 @@
                     return 'Error: Invalid operation.';
             }
         }
+
         const num1 = parseFloat(prompt('Enter the first number:'));
         const num2 = parseFloat(prompt('Enter the second number:'));
-        const operation = prompt('Enter the operation (add, subtract, multiply, divide):').toLowerCase();
 
         if (isNaN(num1) || isNaN(num2)) {
             document.write('Please enter valid numbers.');
         } else {
-            const result = calculate(num1, num2, operation);
+            const addResult = calculate(num1, num2, 'add');
+            const subtractResult = calculate(num1, num2, 'subtract');
+            const multiplyResult = calculate(num1, num2, 'multiply');
+            const divideResult = calculate(num1, num2, 'divide');
 
             document.write(`You entered: ${num1} and ${num2}<br>`);
-            document.write(`Operation: ${operation}<br>`);
-            document.write(`Result: ${result}`);
+            document.write(`Addition: ${addResult}<br>`);
+            document.write(`Subtraction: ${subtractResult}<br>`);
+            document.write(`Multiplication: ${multiplyResult}<br>`);
+            document.write(`Division: ${divideResult}`);
         }
     </script>
 </body>
 </html>
+
